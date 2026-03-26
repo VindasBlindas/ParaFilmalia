@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d0d18" />
+      <stop offset="50%" style="stop-color:#1a1208" />
+      <stop offset="100%" style="stop-color:#0f0f0f" />
+    </linearGradient>
+    <radialGradient id="glow" cx="30%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:rgba(201,168,76,0.12)" />
+      <stop offset="100%" style="stop-color:rgba(0,0,0,0)" />
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)" />
+  <rect width="1920" height="1080" fill="url(#glow)" />
+  <text x="960" y="480" font-size="120" text-anchor="middle" fill="rgba(201,168,76,0.08)" font-family="Georgia, serif" font-weight="bold">PARAFILMALIA</text>
+  <text x="960" y="580" font-size="48" text-anchor="middle" fill="rgba(201,168,76,0.12)" font-family="Georgia, serif">El cine de tu vida</text>
+  <circle cx="200" cy="200" r="3" fill="rgba(201,168,76,0.4)" />
+  <circle cx="1720" cy="880" r="2" fill="rgba(201,168,76,0.3)" />
+  <circle cx="960" cy="100" r="1.5" fill="rgba(255,255,255,0.4)" />
+</svg>
