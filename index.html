@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ParaFilmalia — El cine premium de tu ciudad. Cartelera, estrenos, promociones y más." />
+  <title>ParaFilmalia — Inicio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="page-enter">
+
+  <!-- ═══════════════════════════════════════ NAVBAR ══ -->
+  <header>
+    <nav class="navbar" id="navbar" aria-label="Navegación principal">
+      <div class="container">
+        <a href="index.html" class="nav-logo" aria-label="ParaFilmalia Inicio">
+          <div class="nav-logo-fallback">
+            <img src="assets/img/logo.png" alt="Logo de ParaFilmalia" class="nav-logo-img">
+            <span class="nav-logo-text">Para<span>Filmalia</span></span>
+          </div>
+        </a>
+
+        <ul class="nav-links" role="list">
+          <li><a href="index.html" class="nav-link">Inicio</a></li>
+          <li><a href="cartelera.html" class="nav-link">Cartelera</a></li>
+          <li><a href="promociones.html" class="nav-link">Promociones</a></li>
+          <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+        </ul>
+
+        <a href="cartelera.html" class="btn btn-primary nav-cta" aria-label="Ver cartelera completa">Ver cartelera</a>
+
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <nav class="nav-mobile" id="nav-mobile" aria-label="Menú móvil">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="cartelera.html" class="nav-link">Cartelera</a>
+      <a href="promociones.html" class="nav-link">Promociones</a>
+      <a href="contacto.html" class="nav-link">Contacto</a>
+      <a href="cartelera.html" class="btn btn-primary">Ver cartelera</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════ HERO ═══ -->
+    <section class="hero" aria-label="Bienvenida">
+      <div class="hero-bg" aria-hidden="true">
+        <img src="assets/img/hero-banner.svg" alt="" class="hero-bg-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div class="hero-bg-fallback" style="display:none"></div>
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-label" aria-label="Nuevo en cartelera">
+            <span>●</span> Ahora en cartelera
+          </div>
+          <h1 class="hero-title">
+            Viví el cine
+            <em>como nunca antes</em>
+          </h1>
+          <p class="hero-sub">
+            Sonido envolvente, imagen impecable y asientos de lujo. En ParaFilmalia cada función es una experiencia que no olvidás.
+          </p>
+          <div class="hero-actions">
+            <a href="cartelera.html" class="btn btn-primary btn-lg">Ver cartelera</a>
+            <a href="promociones.html" class="btn btn-ghost btn-lg">Promociones</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <span class="hero-scroll-line"></span>
+        <span>Descubrí más</span>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════ INFO STRIP ══ -->
+    <div class="info-strip" role="complementary" aria-label="Información del cine">
+      <div class="container">
+        <div class="info-strip-inner">
+          <div class="info-strip-item">
+            <span class="icon" aria-hidden="true">🕐</span>
+            <span><strong>Horario:</strong> Lun–Dom · 11:00 am – 11:30 pm</span>
+          </div>
+          <div class="info-strip-item">
+            <span class="icon" aria-hidden="true">📍</span>
+            <span><strong>Ubicación:</strong> Centro Comercial Paraíso, San José</span>
+          </div>
+          <div class="info-strip-item">
+            <span class="icon" aria-hidden="true">📞</span>
+            <span><strong>Soporte:</strong> 2200-7777</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════ FEATURED MOVIES ══ -->
+    <section class="section featured-section" id="cartelera" aria-labelledby="featured-title">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-label">En pantalla</p>
+            <h2 class="section-title" id="featured-title">Películas destacadas</h2>
+          </div>
+          <a href="cartelera.html" class="btn btn-secondary">Ver toda la cartelera</a>
+        </div>
+
+        <div class="movies-grid" id="featured-grid" aria-label="Películas en cartelera">
+          <!-- Loaded by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════ PRÓXIMOS ESTRENOS ══ -->
+    <section class="section upcoming-section" aria-labelledby="upcoming-title">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-label">Muy pronto</p>
+            <h2 class="section-title" id="upcoming-title">Próximos estrenos</h2>
+            <p class="section-subtitle">Marcá tus favoritos y enterate antes que nadie cuando lleguen a cartelera.</p>
+          </div>
+          <a href="cartelera.html" class="btn btn-secondary">Ver cartelera</a>
+        </div>
+
+        <div class="movies-grid" id="upcoming-grid" aria-label="Próximos estrenos">
+          <!-- Loaded by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════ EXPERIENCE ═══ -->
+    <section class="section experience-section" aria-labelledby="exp-title">
+      <div class="container">
+        <div style="text-align:center;max-width:600px;margin:0 auto clamp(2.5rem,5vw,4rem)">
+          <p class="section-label" style="justify-content:center">Lo que nos hace únicos</p>
+          <h2 class="section-title" id="exp-title" style="font-size:clamp(1.8rem,4vw,2.8rem)">La experiencia ParaFilmalia</h2>
+          <p class="section-subtitle" style="margin:0 auto">Cada detalle está diseñado para que tu visita al cine sea perfecta, desde la primera fila hasta la última.</p>
+        </div>
+
+        <div class="experience-grid">
+          <div class="experience-card fade-in">
+            <span class="experience-icon" aria-hidden="true">🔊</span>
+            <h3>Sonido Dolby</h3>
+            <p>Sistema de audio Dolby Atmos envolvente. Sentís cada escena como si estuvieras dentro de la historia.</p>
+          </div>
+          <div class="experience-card fade-in">
+            <span class="experience-icon" aria-hidden="true">🪑</span>
+            <h3>Asientos Premium</h3>
+            <p>Butacas reclinables de cuero con espacio extra y reposabrazos individuales para máxima comodidad.</p>
+          </div>
+          <div class="experience-card fade-in">
+            <span class="experience-icon" aria-hidden="true">🍿</span>
+            <h3>Snack Bar Gourmet</h3>
+            <p>Más de 30 opciones de snacks artesanales, palomitas saborizadas y bebidas especiales de temporada.</p>
+          </div>
+          <div class="experience-card fade-in">
+            <span class="experience-icon" aria-hidden="true">🎞️</span>
+            <h3>Pantalla 4K Laser</h3>
+            <p>Proyección láser 4K con contraste inigualable. Colores vivos y negros perfectos en cada fotograma.</p>
+          </div>
+          <div class="experience-card fade-in">
+            <span class="experience-icon" aria-hidden="true">🌡️</span>
+            <h3>Clima Perfecto</h3>
+            <p>Temperatura controlada con precisión en cada sala. Ni frío ni calor — solo la película y vos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════════════════════════════ TESTIMONIALS ═══ -->
+    <section class="section testimonials-section" aria-labelledby="test-title">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:clamp(2rem,4vw,3rem)">
+          <p class="section-label" style="justify-content:center">Lo que dicen nuestros clientes</p>
+          <h2 class="section-title" id="test-title">Experiencias reales</h2>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card fade-in">
+            <p class="testimonial-text">"Fui a ver el estreno de Neon Fractura y quedé impactada. El sonido, la imagen, y el ambiente son incomparables. Definitivamente el mejor cine de la ciudad."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">MR</div>
+              <div class="testimonial-info">
+                <span class="testimonial-name">María Rodríguez</span>
+                <span class="testimonial-stars" aria-label="5 estrellas">★★★★★</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card fade-in">
+            <p class="testimonial-text">"Llevé a mis hijos a ver El Corazón del Volcán y fue mágico para toda la familia. Las instalaciones son limpias, modernas y los asientos son súper cómodos."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">CP</div>
+              <div class="testimonial-info">
+                <span class="testimonial-name">Carlos Pérez</span>
+                <span class="testimonial-stars" aria-label="5 estrellas">★★★★★</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card fade-in">
+            <p class="testimonial-text">"El Martes 2x1 es una locura de bueno. Vine con mi pareja a ver dos películas seguidas y nos costó lo mismo que una entrada en otro lugar. ¡Volvemos siempre!"</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">LV</div>
+              <div class="testimonial-info">
+                <span class="testimonial-name">Laura Vindas</span>
+                <span class="testimonial-stars" aria-label="4 estrellas">★★★★☆</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════ PROMO BANNER ══ -->
+    <div class="promo-banner" role="complementary" aria-label="Promoción destacada">
+      <div class="container">
+        <h2>Martes 2×1 en todas las funciones</h2>
+        <p>Dos entradas al precio de una, todos los martes. No se requiere código ni reserva previa.</p>
+        <a href="promociones.html" class="btn btn-lg">Ver todas las promos</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════ FOOTER ══ -->
+  <footer class="footer" aria-label="Pie de página">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" aria-label="ParaFilmalia">
+            <div class="nav-logo-fallback">
+              <img src="assets/img/logo.png" alt="Logo de ParaFilmalia" class="nav-logo-img"> 
+              <span class="nav-logo-text">Para<span>Filmalia</span></span>
+            </div>
+          </a>
+          <p>Donde cada función es una experiencia. Cine premium para quienes exigen lo mejor.</p>
+          <div class="footer-social" aria-label="Redes sociales">
+            <a href="#" class="social-link" aria-label="Instagram">ig</a>
+            <a href="#" class="social-link" aria-label="Facebook">fb</a>
+            <a href="#" class="social-link" aria-label="Twitter/X">𝕏</a>
+            <a href="#" class="social-link" aria-label="TikTok">tk</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="cartelera.html">Cartelera</a></li>
+            <li><a href="promociones.html">Promociones</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Información</h4>
+          <ul>
+            <li><a href="promociones.html">Martes 2x1</a></li>
+            <li><a href="promociones.html">Descuento estudiantil</a></li>
+            <li><a href="contacto.html#faq">Preguntas frecuentes</a></li>
+            <li><a href="contacto.html">Trabaja con nosotros</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <div class="footer-info-item">
+            <span>📍</span>
+            <span>C.C. Paraíso, San José, Costa Rica</span>
+          </div>
+          <div class="footer-info-item">
+            <span>📞</span>
+            <span>2200-7777</span>
+          </div>
+          <div class="footer-info-item">
+            <span>✉️</span>
+            <span>hola@parafilmalia.cr</span>
+          </div>
+          <div class="footer-info-item">
+            <span>🕐</span>
+            <span>Lun–Dom · 11:00 am – 11:30 pm</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 ParaFilmalia. Todos los derechos reservados.</p>
+        <p class="footer-credit">Hecho por <span>Matías Vindas Cerdas</span> · 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

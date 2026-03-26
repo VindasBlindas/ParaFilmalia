@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cartelera de ParaFilmalia — Todas las películas en cartelera, horarios y entradas." />
+  <title>Cartelera — ParaFilmalia</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="page-enter">
+
+  <!-- ═══════════════════════════════════════ NAVBAR ══ -->
+  <header>
+    <nav class="navbar scrolled" id="navbar" aria-label="Navegación principal">
+      <div class="container">
+        <a href="index.html" class="nav-logo" aria-label="ParaFilmalia Inicio">
+          <div class="nav-logo-fallback">
+            <img src="assets/img/logo.png" alt="Logo de ParaFilmalia" class="nav-logo-img">
+            <span class="nav-logo-text">Para<span>Filmalia</span></span>
+          </div>
+        </a>
+
+        <ul class="nav-links" role="list">
+          <li><a href="index.html" class="nav-link">Inicio</a></li>
+          <li><a href="cartelera.html" class="nav-link">Cartelera</a></li>
+          <li><a href="promociones.html" class="nav-link">Promociones</a></li>
+          <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+        </ul>
+
+        <a href="cartelera.html" class="btn btn-primary nav-cta">Ver cartelera</a>
+
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <nav class="nav-mobile" id="nav-mobile" aria-label="Menú móvil">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="cartelera.html" class="nav-link">Cartelera</a>
+      <a href="promociones.html" class="nav-link">Promociones</a>
+      <a href="contacto.html" class="nav-link">Contacto</a>
+      <a href="cartelera.html" class="btn btn-primary">Ver cartelera</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════ PAGE HERO ══ -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+          <a href="index.html">Inicio</a>
+          <span aria-hidden="true">›</span>
+          <span>Cartelera</span>
+        </nav>
+        <h1 class="page-hero-title" id="page-title">Cartelera</h1>
+        <p class="page-hero-sub">Explorá todas las películas disponibles y elegí tu próxima función.</p>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════ FILTERS ══ -->
+    <section class="section section--tight" aria-label="Filtros de películas">
+      <div class="container">
+
+        <!-- Genre Chips -->
+        <div class="filters-bar" role="search" aria-label="Filtros de cartelera">
+          <div class="filter-group" style="flex:1">
+            <label for="movie-search">Buscar película</label>
+            <input
+              type="search"
+              id="movie-search"
+              class="filter-input"
+              placeholder="Título, género o director..."
+              aria-label="Buscar película por título o género"
+            />
+          </div>
+
+          <div class="filter-group">
+            <label for="sort-select">Ordenar por</label>
+            <select id="sort-select" class="filter-select" aria-label="Ordenar películas">
+              <option value="recientes">Más recientes</option>
+              <option value="populares">Más populares</option>
+              <option value="az">A–Z</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Genre Chips -->
+        <div class="genre-chips" role="group" aria-label="Filtrar por género" style="margin-bottom:2rem">
+          <button class="genre-chip active" data-genre="Todos" aria-pressed="true">Todos</button>
+          <button class="genre-chip" data-genre="Acción" aria-pressed="false">Acción</button>
+          <button class="genre-chip" data-genre="Drama" aria-pressed="false">Drama</button>
+          <button class="genre-chip" data-genre="Terror" aria-pressed="false">Terror</button>
+          <button class="genre-chip" data-genre="Animación" aria-pressed="false">Animación</button>
+          <button class="genre-chip" data-genre="Romance" aria-pressed="false">Romance</button>
+          <button class="genre-chip" data-genre="Ciencia ficción" aria-pressed="false">Ciencia ficción</button>
+        </div>
+
+        <!-- Movies Grid -->
+        <div class="movies-grid" id="movies-grid" aria-label="Listado de películas" aria-live="polite">
+          <!-- Loaded by JS -->
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════ FOOTER ══ -->
+  <footer class="footer" aria-label="Pie de página">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-fallback">
+              <img src="assets/img/logo.png" alt="Logo de ParaFilmalia" class="nav-logo-img">
+              <span class="nav-logo-text">Para<span>Filmalia</span></span>
+            </div>
+          </a>
+          <p>Donde cada función es una experiencia. Cine premium para quienes exigen lo mejor.</p>
+          <div class="footer-social" aria-label="Redes sociales">
+            <a href="#" class="social-link" aria-label="Instagram">ig</a>
+            <a href="#" class="social-link" aria-label="Facebook">fb</a>
+            <a href="#" class="social-link" aria-label="Twitter/X">𝕏</a>
+            <a href="#" class="social-link" aria-label="TikTok">tk</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="cartelera.html">Cartelera</a></li>
+            <li><a href="promociones.html">Promociones</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Información</h4>
+          <ul>
+            <li><a href="promociones.html">Martes 2x1</a></li>
+            <li><a href="promociones.html">Descuento estudiantil</a></li>
+            <li><a href="contacto.html#faq">Preguntas frecuentes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <div class="footer-info-item"><span>📍</span><span>C.C. Paraíso, San José</span></div>
+          <div class="footer-info-item"><span>📞</span><span>2200-7777</span></div>
+          <div class="footer-info-item"><span>✉️</span><span>hola@parafilmalia.cr</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 ParaFilmalia. Todos los derechos reservados.</p>
+        <p class="footer-credit">Hecho por <span>Matías Vindas Cerdas</span> · 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Update genre chip aria-pressed on click
+    document.querySelectorAll('.genre-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        document.querySelectorAll('.genre-chip').forEach(c => c.setAttribute('aria-pressed', 'false'));
+        chip.setAttribute('aria-pressed', 'true');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Promociones de ParaFilmalia — Martes 2x1, combos, descuentos para estudiantes y eventos especiales." />
+  <title>Promociones — ParaFilmalia</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="page-enter">
+
+  <!-- ═══════════════════════════════════════ NAVBAR ══ -->
+  <header>
+    <nav class="navbar scrolled" id="navbar" aria-label="Navegación principal">
+      <div class="container">
+        <a href="index.html" class="nav-logo" aria-label="ParaFilmalia Inicio">
+          <div class="nav-logo-fallback">
+            <img src="assets/img/logo.png" alt="Logo de ParaFilmalia" class="nav-logo-img">
+            <span class="nav-logo-text">Para<span>Filmalia</span></span>
+          </div>
+        </a>
+        <ul class="nav-links" role="list">
+          <li><a href="index.html" class="nav-link">Inicio</a></li>
+          <li><a href="cartelera.html" class="nav-link">Cartelera</a></li>
+          <li><a href="promociones.html" class="nav-link">Promociones</a></li>
+          <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+        </ul>
+        <a href="cartelera.html" class="btn btn-primary nav-cta">Ver cartelera</a>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <nav class="nav-mobile" id="nav-mobile" aria-label="Menú móvil">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="cartelera.html" class="nav-link">Cartelera</a>
+      <a href="promociones.html" class="nav-link">Promociones</a>
+      <a href="contacto.html" class="nav-link">Contacto</a>
+      <a href="cartelera.html" class="btn btn-primary">Ver cartelera</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════ PAGE HERO ══ -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+          <a href="index.html">Inicio</a>
+          <span aria-hidden="true">›</span>
+          <span>Promociones</span>
+        </nav>
+        <h1 class="page-hero-title" id="page-title">Promociones</h1>
+        <p class="page-hero-sub">Aprovechá nuestros descuentos exclusivos y viví el cine sin gastar de más.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════ PROMO CARDS ══ -->
+    <section class="section" aria-labelledby="promos-title">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-label">Ofertas vigentes</p>
+            <h2 class="section-title" id="promos-title">Descuentos y beneficios</h2>
+          </div>
+        </div>
+
+        <div class="promos-grid">
+
+          <!-- Martes 2x1 -->
+          <article class="promo-card fade-in" aria-label="Promoción Martes 2x1">
+            <div class="promo-card-header">
+              <span class="promo-card-icon" aria-hidden="true">🎟️</span>
+              <div class="promo-card-discount">2×1</div>
+              <div class="promo-card-title">Martes de Cine</div>
+            </div>
+            <div class="promo-card-body">
+              <p>Todos los martes dos entradas al precio de una para cualquier función y sala. Sin restricciones de película ni horario. Válido solo presentando el código en taquilla.</p>
+              <div class="promo-code-box">
+                <div>
+                  <div class="promo-code-label">Tu código</div>
+                  <div class="promo-code-value">MARTES2X1</div>
+                </div>
+                <button class="promo-copy-btn" aria-label="Copiar código MARTES2X1">Copiar</button>
+              </div>
+              <p class="promo-validity" aria-label="Válido todos los martes">
+                <span aria-hidden="true">📅</span> Todos los martes · Sin fecha de vencimiento
+              </p>
+            </div>
+          </article>
+
+          <!-- Combo Cine + Palomitas -->
+          <article class="promo-card fade-in" aria-label="Promoción Combo Cine + Palomitas">
+            <div class="promo-card-header">
+              <span class="promo-card-icon" aria-hidden="true">🍿</span>
+              <div class="promo-card-discount">25%</div>
+              <div class="promo-card-title">Combo Cine + Palomitas</div>
+            </div>
+            <div class="promo-card-body">
+              <p>Comprá tu entrada y llevate una palomitas grande y una bebida con un 25% de descuento sobre el precio regular. El mejor combo para disfrutar la función.</p>
+              <div class="promo-code-box">
+                <div>
+                  <div class="promo-code-label">Tu código</div>
+                  <div class="promo-code-value">COMBO25</div>
+                </div>
+                <button class="promo-copy-btn" aria-label="Copiar código COMBO25">Copiar</button>
+              </div>
+              <p class="promo-validity">
+                <span aria-hidden="true">📅</span> Válido hasta el 30 de junio de 2026
+              </p>
+            </div>
+          </article>
+
+          <!-- Descuento Estudiante -->
+          <article class="promo-card fade-in" aria-label="Promoción Descuento Estudiantil">
+            <div class="promo-card-header">
+              <span class="promo-card-icon" aria-hidden="true">🎓</span>
+              <div class="promo-card-discount">30%</div>
+              <div class="promo-card-title">Descuento Estudiantil</div>
+            </div>
+            <div class="promo-card-body">
+              <p>Presentá tu carné universitario vigente en taquilla y obtené un 30% de descuento en tu entrada. Válido de lunes a jueves en todas las funciones disponibles.</p>
+              <div class="promo-code-box">
+                <div>
+                  <div class="promo-code-label">Tu código</div>
+                  <div class="promo-code-value">ESTUDIANTE30</div>
+                </div>
+                <button class="promo-copy-btn" aria-label="Copiar código ESTUDIANTE30">Copiar</button>
+              </div>
+              <p class="promo-validity">
+                <span aria-hidden="true">📅</span> Lun–Jue · Requiere carné vigente
+              </p>
+            </div>
+          </article>
+
+          <!-- Adulto Mayor -->
+          <article class="promo-card fade-in" aria-label="Promoción Adulto Mayor">
+            <div class="promo-card-header">
+              <span class="promo-card-icon" aria-hidden="true">⭐</span>
+              <div class="promo-card-discount">40%</div>
+              <div class="promo-card-title">Adulto Mayor</div>
+            </div>
+            <div class="promo-card-body">
+              <p>Personas mayores de 65 años obtienen un 40% de descuento todos los días de la semana. Presentá tu cédula en taquilla, sin necesidad de código ni reserva previa.</p>
+              <div class="promo-code-box">
+                <div>
+                  <div class="promo-code-label">Tu código</div>
+                  <div class="promo-code-value">SENIOR40</div>
+                </div>
+                <button class="promo-copy-btn" aria-label="Copiar código SENIOR40">Copiar</button>
+              </div>
+              <p class="promo-validity">
+                <span aria-hidden="true">📅</span> Todos los días · +65 años
+              </p>
+            </div>
+          </article>
+
+          <!-- Noche Madrugadora -->
+          <article class="promo-card fade-in" aria-label="Promoción Noche Madrugadora">
+            <div class="promo-card-header">
+              <span class="promo-card-icon" aria-hidden="true">🌙</span>
+              <div class="promo-card-discount">Noche</div>
+              <div class="promo-card-title">Función Nocturna</div>
+            </div>
+            <div class="promo-card-body">
+              <p>Las funciones después de las 10:00 pm tienen un precio especial de ₡2.500 por entrada en cualquier sala. Ideal para los amantes del cine de medianoche.</p>
+              <div class="promo-code-box">
+                <div>
+                  <div class="promo-code-label">Tu código</div>
+                  <div class="promo-code-value">NOCHE10PM</div>
+                </div>
+                <button class="promo-copy-btn" aria-label="Copiar código NOCHE10PM">Copiar</button>
+              </div>
+              <p class="promo-validity">
+                <span aria-hidden="true">📅</span> Funciones 22:00 en adelante
+              </p>
+            </div>
+          </article>
+
+          <!-- Cumpleaños -->
+          <article class="promo-card fade-in" aria-label="Promoción Cumpleaños">
+            <div class="promo-card-header">
+              <span class="promo-card-icon" aria-hidden="true">🎂</span>
+              <div class="promo-card-discount">Free</div>
+              <div class="promo-card-title">Regalo de Cumpleaños</div>
+            </div>
+            <div class="promo-card-body">
+              <p>En tu mes de cumpleaños, una entrada es completamente gratis. Registrate en nuestro programa de fidelidad y presentá tu cédula en el día de tu cumpleaños.</p>
+              <div class="promo-code-box">
+                <div>
+                  <div class="promo-code-label">Tu código</div>
+                  <div class="promo-code-value">CUMPLE2026</div>
+                </div>
+                <button class="promo-copy-btn" aria-label="Copiar código CUMPLE2026">Copiar</button>
+              </div>
+              <p class="promo-validity">
+                <span aria-hidden="true">📅</span> Solo el día de tu cumpleaños
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════ SPECIAL EVENTS ══ -->
+    <section class="section" style="background:var(--deep)" aria-labelledby="events-title">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-label">Eventos especiales</p>
+            <h2 class="section-title" id="events-title">Noches únicas en ParaFilmalia</h2>
+            <p class="section-subtitle">Viví experiencias que van más allá de la simple proyección.</p>
+          </div>
+        </div>
+
+        <div class="events-grid">
+
+          <article class="event-card fade-in">
+            <div class="event-date-block" aria-label="Sábado 28 de marzo">
+              <span class="day">28</span>
+              <span class="month">Mar</span>
+            </div>
+            <div class="event-info">
+              <div class="event-type">Premiere</div>
+              <h3>Premiere: Neon Fractura</h3>
+              <p>Noche de estreno con alfombra roja, sorteos y una experiencia inmersiva antes de la función principal.</p>
+            </div>
+          </article>
+
+          <article class="event-card fade-in">
+            <div class="event-date-block" aria-label="Domingo 5 de abril">
+              <span class="day">05</span>
+              <span class="month">Abr</span>
+            </div>
+            <div class="event-info">
+              <div class="event-type">Familia</div>
+              <h3>Noche de Familia</h3>
+              <p>Toda la familia entra con un combo especial de palomitas y bebidas a ₡12.000 para cuatro personas.</p>
+            </div>
+          </article>
+
+          <article class="event-card fade-in">
+            <div class="event-date-block" aria-label="Viernes 11 de abril">
+              <span class="day">11</span>
+              <span class="month">Abr</span>
+            </div>
+            <div class="event-info">
+              <div class="event-type">Clásico</div>
+              <h3>Noche de Clásicos</h3>
+              <p>Proyección especial de un clásico del cine latinoamericano restaurado en 4K. Entrada libre con reserva previa.</p>
+            </div>
+          </article>
+
+          <article class="event-card fade-in">
+            <div class="event-date-block" aria-label="Sábado 19 de abril">
+              <span class="day">19</span>
+              <span class="month">Abr</span>
+            </div>
+            <div class="event-info">
+              <div class="event-type">Terror</div>
+              <h3>Maratón de Terror</h3>
+              <p>Cuatro películas de terror seguidas con descansos, snacks temáticos y experiencias de susto en sala.</p>
+            </div>
+          </article>
+
+          <article class="event-card fade-in">
+            <div class="event-date-block" aria-label="Martes 22 de abril">
+              <span class="day">22</span>
+              <span class="month">Abr</span>
+            </div>
+            <div class="event-info">
+              <div class="event-type">Animación</div>
+              <h3>Festival de Animación</h3>
+              <p>Una tarde dedicada al mejor cine de animación del año. Especial para niños con actividades previas a la función.</p>
+            </div>
+          </article>
+
+          <article class="event-card fade-in">
+            <div class="event-date-block" aria-label="Sábado 3 de mayo">
+              <span class="day">03</span>
+              <span class="month">May</span>
+            </div>
+            <div class="event-info">
+              <div class="event-type">Cine + Gastronomía</div>
+              <h3>Cine Gourmet Night</h3>
+              <p>Función VIP con menú de degustación servido en sala. Experiencia gastronómica y cinematográfica en una sola noche.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════ PROMO BANNER ══ -->
+    <div class="promo-banner" role="complementary" aria-label="Llamada a la acción">
+      <div class="container">
+        <h2>¿Listo para el cine?</h2>
+        <p>Usá tus códigos promocionales directamente en taquilla o en nuestra app al momento de comprar.</p>
+        <a href="cartelera.html" class="btn btn-lg">Ver cartelera completa</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════ FOOTER ══ -->
+  <footer class="footer" aria-label="Pie de página">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-fallback">
+              <img src="assets/img/logo.png" alt="Logo de ParaFilmalia" class="nav-logo-img">
+              <span class="nav-logo-text">Para<span>Filmalia</span></span>
+            </div>
+          </a>
+          <p>Donde cada función es una experiencia. Cine premium para quienes exigen lo mejor.</p>
+          <div class="footer-social" aria-label="Redes sociales">
+            <a href="#" class="social-link" aria-label="Instagram">ig</a>
+            <a href="#" class="social-link" aria-label="Facebook">fb</a>
+            <a href="#" class="social-link" aria-label="Twitter/X">𝕏</a>
+            <a href="#" class="social-link" aria-label="TikTok">tk</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="cartelera.html">Cartelera</a></li>
+            <li><a href="promociones.html">Promociones</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Promociones</h4>
+          <ul>
+            <li><a href="#promos-title">Martes 2×1</a></li>
+            <li><a href="#promos-title">Combo Snack</a></li>
+            <li><a href="#promos-title">Descuento Estudiantil</a></li>
+            <li><a href="#events-title">Eventos especiales</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <div class="footer-info-item"><span>📍</span><span>C.C. Paraíso, San José</span></div>
+          <div class="footer-info-item"><span>📞</span><span>2200-7777</span></div>
+          <div class="footer-info-item"><span>✉️</span><span>hola@parafilmalia.cr</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 ParaFilmalia. Todos los derechos reservados.</p>
+        <p class="footer-credit">Hecho por <span>Matías Vindas Cerdas</span> · 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

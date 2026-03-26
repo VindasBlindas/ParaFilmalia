@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Detalles de película, horarios y selección de asientos — ParaFilmalia." />
+  <title>Película — ParaFilmalia</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .detail-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .detail-layout { grid-template-columns: 1fr; }
+    }
+    .cast-list {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+    .cast-tag {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0.25rem 0.65rem;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .info-block {
+      background: var(--surface);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+    }
+    .info-block-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.25rem; }
+    .info-block-value { font-size: 0.95rem; color: var(--white); font-weight: 600; }
+  </style>
+</head>
+<body class="page-enter" id="detail-page">
+
+  <!-- ═══════════════════════════════════════ NAVBAR ══ -->
+  <header>
+    <nav class="navbar" id="navbar" aria-label="Navegación principal">
+      <div class="container">
+        <a href="index.html" class="nav-logo" aria-label="ParaFilmalia Inicio">
+          <div class="nav-logo-fallback">
+            <img src="assets/img/logo.png" alt="Logo de ParaFilmalia" class="nav-logo-img">
+            <span class="nav-logo-text">Para<span>Filmalia</span></span>
+          </div>
+        </a>
+        <ul class="nav-links" role="list">
+          <li><a href="index.html" class="nav-link">Inicio</a></li>
+          <li><a href="cartelera.html" class="nav-link">Cartelera</a></li>
+          <li><a href="promociones.html" class="nav-link">Promociones</a></li>
+          <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+        </ul>
+        <a href="cartelera.html" class="btn btn-primary nav-cta">Ver cartelera</a>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <nav class="nav-mobile" id="nav-mobile" aria-label="Menú móvil">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="cartelera.html" class="nav-link">Cartelera</a>
+      <a href="promociones.html" class="nav-link">Promociones</a>
+      <a href="contacto.html" class="nav-link">Contacto</a>
+      <a href="cartelera.html" class="btn btn-primary">Ver cartelera</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ══════════════════════════════════ DETAIL HERO ══ -->
+    <section class="detail-hero" aria-labelledby="detail-title">
+      <div class="detail-hero-bg" id="detail-bg" style="background-image:url('assets/img/movie-1.svg')" role="img" aria-label="Imagen de fondo de la película"></div>
+      <div class="detail-hero-overlay" aria-hidden="true"></div>
+
+      <div class="container" style="width:100%">
+        <nav class="breadcrumb" aria-label="Ruta de navegación" style="position:relative;z-index:1;margin-bottom:0">
+          <a href="index.html">Inicio</a>
+          <span aria-hidden="true">›</span>
+          <a href="cartelera.html">Cartelera</a>
+          <span aria-hidden="true">›</span>
+          <span id="breadcrumb-title">Película</span>
+        </nav>
+
+        <div class="detail-hero-content">
+          <div class="detail-poster" aria-label="Póster de la película">
+            <img src="assets/img/movie-1.svg" alt="" id="detail-poster-img" />
+          </div>
+
+          <div class="detail-info">
+            <div class="detail-meta-badges">
+              <span class="meta-badge meta-badge-genre" id="detail-genre">Género</span>
+              <span class="meta-badge meta-badge-rating" id="detail-classification">A</span>
+            </div>
+
+            <h1 class="detail-title" id="detail-title">Cargando...</h1>
+
+            <div class="detail-info-row">
+              <span><span class="star" aria-hidden="true">★</span> <span id="detail-rating">—</span></span>
+              <span>⏱ <span id="detail-duration">—</span></span>
+              <span>📅 2026</span>
+            </div>
+
+            <p class="detail-synopsis" id="detail-synopsis">Cargando sinopsis...</p>
+
+            <div style="margin-bottom:1.5rem">
+              <p style="font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:0.5rem">Reparto</p>
+              <div class="cast-list" id="detail-cast-list">
+                <!-- populated by JS -->
+              </div>
+            </div>
+
+            <div class="detail-actions">
+              <button class="btn btn-primary btn-lg" id="trailer-btn" aria-haspopup="dialog">
+                ▶ Ver tráiler
+              </button>
+              <a href="#showtimes" class="btn btn-ghost btn-lg">Seleccionar función</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════ SHOWTIMES ═══ -->
+    <section class="section showtime-section" id="showtimes" aria-labelledby="showtime-title">
+      <div class="container">
+        <div class="detail-layout">
+          <div>
+            <p class="section-label">Elegí tu día y hora</p>
+            <h2 class="section-title" id="showtime-title" style="font-size:1.8rem;margin-bottom:1.5rem">Funciones disponibles</h2>
+
+            <!-- Date Tabs -->
+            <div class="showtime-date-tabs" role="tablist" aria-label="Seleccionar fecha">
+              <button class="showtime-tab active" role="tab" aria-selected="true" aria-label="Hoy, miércoles 25 de marzo">
+                <span class="showtime-tab-day">Hoy</span>
+                <span class="showtime-tab-date">25</span>
+              </button>
+              <button class="showtime-tab" role="tab" aria-selected="false" aria-label="Jueves 26 de marzo">
+                <span class="showtime-tab-day">Jue</span>
+                <span class="showtime-tab-date">26</span>
+              </button>
+              <button class="showtime-tab" role="tab" aria-selected="false" aria-label="Viernes 27 de marzo">
+                <span class="showtime-tab-day">Vie</span>
+                <span class="showtime-tab-date">27</span>
+              </button>
+              <button class="showtime-tab" role="tab" aria-selected="false" aria-label="Sábado 28 de marzo">
+                <span class="showtime-tab-day">Sáb</span>
+                <span class="showtime-tab-date">28</span>
+              </button>
+              <button class="showtime-tab" role="tab" aria-selected="false" aria-label="Domingo 29 de marzo">
+                <span class="showtime-tab-day">Dom</span>
+                <span class="showtime-tab-date">29</span>
+              </button>
+              <button class="showtime-tab" role="tab" aria-selected="false" aria-label="Lunes 30 de marzo">
+                <span class="showtime-tab-day">Lun</span>
+                <span class="showtime-tab-date">30</span>
+              </button>
+            </div>
+
+            <!-- Slots -->
+            <div class="showtime-slots" aria-label="Horarios disponibles">
+              <button class="showtime-slot">
+                <span class="slot-time">12:15</span>
+                <span class="slot-format">Digital · Sala 1</span>
+              </button>
+              <button class="showtime-slot">
+                <span class="slot-time">14:30</span>
+                <span class="slot-format">4K · Sala 3</span>
+              </button>
+              <button class="showtime-slot disabled" aria-disabled="true">
+                <span class="slot-time">16:45</span>
+                <span class="slot-format">Digital · Sala 2</span>
+              </button>
+              <button class="showtime-slot">
+                <span class="slot-time">18:00</span>
+                <span class="slot-format">Dolby · Sala 5</span>
+              </button>
+              <button class="showtime-slot">
+                <span class="slot-time">20:15</span>
+                <span class="slot-format">4K · Sala 3</span>
+              </button>
+              <button class="showtime-slot">
+                <span class="slot-time">22:30</span>
+                <span class="slot-format">Digital · Sala 1</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Price Card -->
+          <aside class="price-card" aria-label="Resumen de tu reserva">
+            <h3>Resumen de compra</h3>
+
+            <div class="info-grid">
+              <div class="info-block">
+                <div class="info-block-label">Película</div>
+                <div class="info-block-value" id="price-movie" style="font-size:0.85rem">—</div>
+              </div>
+              <div class="info-block">
+                <div class="info-block-label">Función</div>
+                <div class="info-block-value">—</div>
+              </div>
+            </div>
+
+            <div class="price-row">
+              <span>Asientos seleccionados</span>
+              <span id="seat-count">0</span>
+            </div>
+            <div class="price-row">
+              <span>Precio por entrada</span>
+              <span>₡4.500</span>
+            </div>
+            <div class="price-row">
+              <span>Cargo de servicio</span>
+              <span>₡0</span>
+            </div>
+            <div class="price-row total">
+              <span>Total</span>
+              <span id="seat-total">₡0</span>
+            </div>
+
+            <button class="btn btn-primary" style="width:100%;margin-top:1.25rem;justify-content:center" id="reserve-btn" disabled>
+              Reservar ahora
+            </button>
+
+            <p style="font-size:0.75rem;color:var(--muted);margin-top:0.75rem;text-align:center">
+              Seleccioná tus asientos en el mapa de abajo para continuar.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════ SEAT MAP ════ -->
+    <section class="section seat-section" aria-labelledby="seat-title">
+      <div class="container">
+        <p class="section-label" style="justify-content:center;margin-bottom:0.5rem">Mapa de sala</p>
+        <h2 class="section-title" id="seat-title" style="text-align:center;font-size:1.6rem;margin-bottom:2rem">Seleccioná tus asientos</h2>
+
+        <div class="screen-label" aria-label="Pantalla">
+          <div class="screen-bar" aria-hidden="true"></div>
+          <p class="screen-text">PANTALLA</p>
+        </div>
+
+        <div class="seat-map" id="seat-map" role="group" aria-label="Mapa de asientos">
+          <!-- Generated by JS -->
+        </div>
+
+        <div class="seat-legend" aria-label="Leyenda de asientos">
+          <div class="legend-item">
+            <div class="legend-seat available" aria-hidden="true"></div>
+            <span>Disponible</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-seat selected" aria-hidden="true"></div>
+            <span>Seleccionado</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-seat occupied" aria-hidden="true"></div>
+            <span>Ocupado</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════ RELATED ════ -->
+    <section class="section" style="background:var(--deep)" aria-labelledby="related-title">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="section-label">También te puede interesar</p>
+            <h2 class="section-title" id="related-title">Películas relacionadas</h2>
+          </div>
+          <a href="cartelera.html" class="btn btn-secondary">Ver toda la cartelera</a>
+        </div>
+        <div class="movies-grid" id="related-grid" aria-label="Películas relacionadas">
+          <!-- Loaded by JS -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════ TRAILER MODAL ══ -->
+  <div class="modal-backdrop" id="trailer-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-title">Tráiler oficial</h2>
+        <button class="modal-close" id="trailer-close" aria-label="Cerrar tráiler">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="trailer-placeholder" role="img" aria-label="Vista previa del tráiler">
+          <div class="trailer-play-btn" aria-hidden="true">▶</div>
+          <p>Tráiler no disponible en modo demo.<br>En producción se integraría el reproductor oficial.</p>
+        </div>
+        <p style="font-size:0.82rem;color:var(--text-dim);margin-top:1rem;text-align:center">
+          Cerrá esta ventana con la tecla <kbd style="background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:0.1rem 0.4rem;font-size:0.8rem">Esc</kbd> o haciendo clic fuera del panel.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ FOOTER ══ -->
+  <footer class="footer" aria-label="Pie de página">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-fallback">
+              <img src="assets/img/logo.png" alt="Logo de ParaFilmalia" class="nav-logo-img">
+              <span class="nav-logo-text">Para<span>Filmalia</span></span>
+            </div>
+          </a>
+          <p>Donde cada función es una experiencia. Cine premium para quienes exigen lo mejor.</p>
+          <div class="footer-social" aria-label="Redes sociales">
+            <a href="#" class="social-link" aria-label="Instagram">ig</a>
+            <a href="#" class="social-link" aria-label="Facebook">fb</a>
+            <a href="#" class="social-link" aria-label="Twitter/X">𝕏</a>
+            <a href="#" class="social-link" aria-label="TikTok">tk</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="cartelera.html">Cartelera</a></li>
+            <li><a href="promociones.html">Promociones</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Información</h4>
+          <ul>
+            <li><a href="promociones.html">Martes 2x1</a></li>
+            <li><a href="contacto.html#faq">Preguntas frecuentes</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <div class="footer-info-item"><span>📍</span><span>C.C. Paraíso, San José</span></div>
+          <div class="footer-info-item"><span>📞</span><span>2200-7777</span></div>
+          <div class="footer-info-item"><span>✉️</span><span>hola@parafilmalia.cr</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 ParaFilmalia. Todos los derechos reservados.</p>
+        <p class="footer-credit">Hecho por <span>Matías Vindas Cerdas</span> · 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Populate cast tags from JS-set detail-cast text
+    const castEl = document.getElementById('detail-cast');
+    if (!castEl) {
+      // Will be set after main.js runs via MutationObserver pattern
+    }
+
+    // After main.js populates movie data, update additional elements
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const titleEl = document.getElementById('detail-title');
+        const castTextEl = document.getElementById('detail-cast');
+        const breadcrumbEl = document.getElementById('breadcrumb-title');
+        const priceMEl = document.getElementById('price-movie');
+
+        if (titleEl && breadcrumbEl) breadcrumbEl.textContent = titleEl.textContent;
+        if (titleEl && priceMEl) priceMEl.textContent = titleEl.textContent;
+
+        // Convert cast text to tags
+        if (castTextEl) {
+          const castListEl = document.getElementById('detail-cast-list');
+          if (castListEl) {
+            const members = castTextEl.textContent.split(' · ');
+            members.forEach(m => {
+              if (m.trim()) {
+                const tag = document.createElement('span');
+                tag.className = 'cast-tag';
+                tag.textContent = m.trim();
+                castListEl.appendChild(tag);
+              }
+            });
+          }
+        }
+      }, 50);
+    });
+  </script>
+  <!-- Hidden element for cast data -->
+  <span id="detail-cast" style="display:none"></span>
+</body>
+</html>

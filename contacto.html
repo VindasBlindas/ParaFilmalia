@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contacto ParaFilmalia — Envianos tu consulta, encontrá nuestra ubicación y resolvé tus dudas." />
+  <title>Contacto — ParaFilmalia</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="page-enter">
+
+  <!-- ═══════════════════════════════════════ NAVBAR ══ -->
+  <header>
+    <nav class="navbar scrolled" id="navbar" aria-label="Navegación principal">
+      <div class="container">
+        <a href="index.html" class="nav-logo" aria-label="ParaFilmalia Inicio">
+          <div class="nav-logo-fallback">
+            <img src="assets/img/logo.png" alt="Logo de ParaFilmalia" class="nav-logo-img">
+            <span class="nav-logo-text">Para<span>Filmalia</span></span>
+          </div>
+        </a>
+        <ul class="nav-links" role="list">
+          <li><a href="index.html" class="nav-link">Inicio</a></li>
+          <li><a href="cartelera.html" class="nav-link">Cartelera</a></li>
+          <li><a href="promociones.html" class="nav-link">Promociones</a></li>
+          <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+        </ul>
+        <a href="cartelera.html" class="btn btn-primary nav-cta">Ver cartelera</a>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <nav class="nav-mobile" id="nav-mobile" aria-label="Menú móvil">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="cartelera.html" class="nav-link">Cartelera</a>
+      <a href="promociones.html" class="nav-link">Promociones</a>
+      <a href="contacto.html" class="nav-link">Contacto</a>
+      <a href="cartelera.html" class="btn btn-primary">Ver cartelera</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════ PAGE HERO ══ -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+          <a href="index.html">Inicio</a>
+          <span aria-hidden="true">›</span>
+          <span>Contacto</span>
+        </nav>
+        <h1 class="page-hero-title" id="page-title">Contacto</h1>
+        <p class="page-hero-sub">Estamos aquí para ayudarte. Escribinos y te respondemos a la brevedad.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════ CONTACT LAYOUT ══ -->
+    <section class="section" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-layout">
+
+          <!-- ─── Contact Form ─── -->
+          <div>
+            <p class="section-label">Envianos un mensaje</p>
+            <h2 class="section-title" id="contact-title" style="font-size:2rem;margin-bottom:2rem">¿Cómo podemos ayudarte?</h2>
+
+            <div class="contact-form-wrap">
+              <div class="form-success-message" id="form-success" role="alert" aria-live="polite">
+                <span aria-hidden="true">✅</span>
+                <span>¡Mensaje enviado con éxito! Te respondemos en menos de 24 horas.</span>
+              </div>
+
+              <form id="contact-form" novalidate aria-label="Formulario de contacto">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="nombre">Nombre <span class="required" aria-label="campo requerido">*</span></label>
+                    <input
+                      type="text"
+                      id="nombre"
+                      name="nombre"
+                      class="form-control"
+                      placeholder="Tu nombre completo"
+                      autocomplete="name"
+                      required
+                      aria-required="true"
+                      aria-describedby="error-nombre"
+                    />
+                    <span class="form-error" id="error-nombre" data-error="nombre" role="alert" style="display:none"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="correo">Correo electrónico <span class="required" aria-label="campo requerido">*</span></label>
+                    <input
+                      type="email"
+                      id="correo"
+                      name="correo"
+                      class="form-control"
+                      placeholder="tu@correo.com"
+                      autocomplete="email"
+                      required
+                      aria-required="true"
+                      aria-describedby="error-correo"
+                    />
+                    <span class="form-error" id="error-correo" data-error="correo" role="alert" style="display:none"></span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="asunto">Asunto <span class="required" aria-label="campo requerido">*</span></label>
+                  <input
+                    type="text"
+                    id="asunto"
+                    name="asunto"
+                    class="form-control"
+                    placeholder="¿Sobre qué querés consultarnos?"
+                    required
+                    aria-required="true"
+                    aria-describedby="error-asunto"
+                  />
+                  <span class="form-error" id="error-asunto" data-error="asunto" role="alert" style="display:none"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="mensaje">Mensaje <span class="required" aria-label="campo requerido">*</span></label>
+                  <textarea
+                    id="mensaje"
+                    name="mensaje"
+                    class="form-control"
+                    placeholder="Contanos tu consulta con el mayor detalle posible..."
+                    rows="5"
+                    required
+                    aria-required="true"
+                    aria-describedby="error-mensaje"
+                  ></textarea>
+                  <span class="form-error" id="error-mensaje" data-error="mensaje" role="alert" style="display:none"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem">
+                  Enviar mensaje
+                </button>
+
+                <p style="font-size:0.78rem;color:var(--muted);margin-top:0.75rem;text-align:center">
+                  Los campos marcados con <span style="color:var(--gold)">*</span> son obligatorios.
+                </p>
+              </form>
+            </div>
+          </div>
+
+          <!-- ─── Info Cards ─── -->
+          <aside aria-label="Información de contacto">
+            <p class="section-label" style="margin-bottom:1.5rem">Encontranos</p>
+
+            <div class="contact-info-cards">
+
+              <div class="contact-info-card fade-in">
+                <div class="contact-info-icon" aria-hidden="true">🕐</div>
+                <div>
+                  <h4>Horario de atención</h4>
+                  <p>
+                    Lun–Vie: 11:00 am – 11:30 pm<br />
+                    Sáb–Dom: 10:00 am – 12:00 am
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-info-card fade-in">
+                <div class="contact-info-icon" aria-hidden="true">📍</div>
+                <div>
+                  <h4>Ubicación</h4>
+                  <p>
+                    Centro Comercial Paraíso<br />
+                    San José, Costa Rica<br />
+                    Nivel 3, Local 302
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-info-card fade-in">
+                <div class="contact-info-icon" aria-hidden="true">📞</div>
+                <div>
+                  <h4>Teléfono</h4>
+                  <p>
+                    Taquilla: <a href="tel:+50622007777" style="color:var(--gold)">2200-7777</a><br />
+                    WhatsApp: <a href="#" style="color:var(--gold)">+506 8888-9999</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="contact-info-card fade-in">
+                <div class="contact-info-icon" aria-hidden="true">✉️</div>
+                <div>
+                  <h4>Correo electrónico</h4>
+                  <p>
+                    <a href="mailto:hola@parafilmalia.cr" style="color:var(--gold)">hola@parafilmalia.cr</a><br />
+                    Resp. en menos de 24 h
+                  </p>
+                </div>
+              </div>
+
+              <!-- Map Placeholder -->
+              <div class="map-placeholder fade-in" role="img" aria-label="Ubicación del cine ParaFilmalia en San José">
+                <div class="map-placeholder-icon" aria-hidden="true">🗺️</div>
+                <p>C.C. Paraíso, San José<br />Costa Rica</p>
+                <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm" style="position:relative;z-index:1" aria-label="Abrir ubicación en Google Maps">
+                  Abrir en Google Maps
+                </a>
+              </div>
+
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════ FAQ ══════ -->
+    <section class="section" style="background:var(--deep)" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div style="max-width:720px;margin:0 auto">
+          <div style="text-align:center;margin-bottom:2.5rem">
+            <p class="section-label" style="justify-content:center">Resolvemos tus dudas</p>
+            <h2 class="section-title" id="faq-title">Preguntas frecuentes</h2>
+          </div>
+
+          <div class="faq-list" aria-label="Preguntas frecuentes">
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+                ¿Con cuánta anticipación puedo comprar mis entradas?
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" id="faq-1" role="region">
+                <div class="faq-answer-inner">
+                  Podés comprar tus entradas con hasta 7 días de anticipación directamente en taquilla durante el horario de atención. Próximamente habilitaremos la compra en línea para que puedas hacerlo desde la comodidad de tu casa.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+                ¿Puedo cambiar o cancelar mi reserva?
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" id="faq-2" role="region">
+                <div class="faq-answer-inner">
+                  Las reservas pueden modificarse hasta 2 horas antes de la función. Para cancelaciones con reembolso completo, debe hacerse con al menos 24 horas de anticipación. Podés gestionar esto directamente en taquilla o llamando al 2200-7777.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+                ¿Se permiten alimentos del exterior?
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" id="faq-3" role="region">
+                <div class="faq-answer-inner">
+                  No está permitido ingresar alimentos ni bebidas del exterior a las salas. Sin embargo, nuestro Snack Bar Gourmet ofrece más de 30 opciones de alimentos y bebidas de calidad a precios razonables, incluyendo opciones vegetarianas y sin gluten.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+                ¿Cómo funciona el descuento del Martes 2×1?
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" id="faq-4" role="region">
+                <div class="faq-answer-inner">
+                  Todos los martes cualquier persona puede comprar dos entradas al precio de una para cualquier función disponible ese día. No se requiere código ni registro previo. Simplemente presentate en taquilla un martes y solicitá el 2×1. No aplica para eventos especiales ni funciones exclusivas.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
+                ¿Las salas tienen acceso para personas con discapacidad?
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" id="faq-5" role="region">
+                <div class="faq-answer-inner">
+                  Sí. Todas nuestras salas cuentan con acceso para personas con movilidad reducida, rampas de acceso, espacios reservados en sala para sillas de ruedas y baños adaptados en cada nivel. Contamos también con personal capacitado para asistir a nuestros visitantes que lo requieran.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-6">
+                ¿Tienen funciones con subtítulos o en versión original?
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" id="faq-6" role="region">
+                <div class="faq-answer-inner">
+                  Ofrecemos funciones subtituladas y dobladas para la mayoría de las películas en cartelera. En la cartelera podés ver el formato de cada función (SUB o DUB). Los fines de semana programamos al menos dos funciones en versión original subtitulada para los amantes del cine en su idioma original.
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false" aria-controls="faq-7">
+                ¿Puedo reservar toda una sala para un evento privado?
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" id="faq-7" role="region">
+                <div class="faq-answer-inner">
+                  ¡Sí! Ofrecemos el servicio de alquiler de salas para eventos privados, cumpleaños, presentaciones corporativas, y más. Para consultar disponibilidad y precios, escribinos al correo hola@parafilmalia.cr o llamá al 2200-7777 con al menos una semana de anticipación.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════ FOOTER ══ -->
+  <footer class="footer" aria-label="Pie de página">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="nav-logo-fallback">
+              <img src="assets/img/logo.png" alt="Logo de ParaFilmalia" class="nav-logo-img">
+              <span class="nav-logo-text">Para<span>Filmalia</span></span>
+            </div>
+          </a>
+          <p>Donde cada función es una experiencia. Cine premium para quienes exigen lo mejor.</p>
+          <div class="footer-social" aria-label="Redes sociales">
+            <a href="#" class="social-link" aria-label="Instagram">ig</a>
+            <a href="#" class="social-link" aria-label="Facebook">fb</a>
+            <a href="#" class="social-link" aria-label="Twitter/X">𝕏</a>
+            <a href="#" class="social-link" aria-label="TikTok">tk</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="cartelera.html">Cartelera</a></li>
+            <li><a href="promociones.html">Promociones</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Información</h4>
+          <ul>
+            <li><a href="promociones.html">Martes 2x1</a></li>
+            <li><a href="promociones.html">Descuento estudiantil</a></li>
+            <li><a href="#faq">Preguntas frecuentes</a></li>
+            <li><a href="contacto.html">Trabajá con nosotros</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <div class="footer-info-item"><span>📍</span><span>C.C. Paraíso, San José, Costa Rica</span></div>
+          <div class="footer-info-item"><span>📞</span><span>2200-7777</span></div>
+          <div class="footer-info-item"><span>✉️</span><span>hola@parafilmalia.cr</span></div>
+          <div class="footer-info-item"><span>🕐</span><span>Lun–Dom · 11:00 am – 11:30 pm</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 ParaFilmalia. Todos los derechos reservados.</p>
+        <p class="footer-credit">Hecho por <span>Matías Vindas Cerdas</span> · 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
