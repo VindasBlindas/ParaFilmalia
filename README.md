@@ -1,4 +1,3 @@
-# ParaFilmalia
 # ParaFilmalia — Sitio Web del Cine
 
 **Autor:** Matías Vindas Cerdas · 2026  
